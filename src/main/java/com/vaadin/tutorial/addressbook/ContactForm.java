@@ -25,6 +25,7 @@ public class ContactForm extends FormLayout {
 
     Button save = new Button("Save", this::save);
     Button cancel = new Button("Cancel", this::cancel);
+    Button delete = new Button("Delete", this::delete);
     TextField firstName = new TextField("First name");
     TextField lastName = new TextField("Last name");
     TextField task = new TextField("Task");
@@ -90,7 +91,15 @@ public class ContactForm extends FormLayout {
             // Validation exceptions could be shown here
         }
     }
-
+    
+    public void delete(Button.ClickEvent event) {
+    	try {
+    		getUI().service.delete(contact);
+    		String msg = String.format("Deleted Task");
+    		Notification.show(msg, Type.TRAY_NOTIFICATION);
+    		getUI().refreshContacts();
+    	}
+    }
     public void cancel(Button.ClickEvent event) {
         // Place to call business logic.
         Notification.show("Cancelled", Type.TRAY_NOTIFICATION);

@@ -24,8 +24,8 @@ import com.vaadin.v7.ui.TextField;
 public class ContactForm extends FormLayout {
 
     Button save = new Button("Save", this::save);
-    Button cancel = new Button("Cancel", this::cancel);
     Button delete = new Button("Delete", this::delete);
+    Button cancel = new Button("Cancel", this::cancel);
     TextField firstName = new TextField("First name");
     TextField lastName = new TextField("Last name");
     TextField task = new TextField("Task");
@@ -58,7 +58,7 @@ public class ContactForm extends FormLayout {
         setSizeUndefined();
         setMargin(true);
 
-        HorizontalLayout actions = new HorizontalLayout(save,delete,cancel);
+        HorizontalLayout actions = new HorizontalLayout(save, delete, cancel);
         actions.setSpacing(true);
 
         addComponents(actions, firstName, lastName, task, startDate, endDate);

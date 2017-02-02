@@ -58,7 +58,7 @@ public class ContactForm extends FormLayout {
         setSizeUndefined();
         setMargin(true);
 
-        HorizontalLayout actions = new HorizontalLayout(save, cancel);
+        HorizontalLayout actions = new HorizontalLayout(save,delete,cancel);
         actions.setSpacing(true);
 
         addComponents(actions, firstName, lastName, task, startDate, endDate);

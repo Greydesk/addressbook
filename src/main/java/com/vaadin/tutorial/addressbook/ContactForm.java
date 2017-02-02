@@ -98,6 +98,8 @@ public class ContactForm extends FormLayout {
     		String msg = String.format("Deleted Task");
     		Notification.show(msg, Type.TRAY_NOTIFICATION);
     		getUI().refreshContacts();
+    	} finally {
+    		
     	}
     }
     public void cancel(Button.ClickEvent event) {
